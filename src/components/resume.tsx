@@ -34,17 +34,17 @@ type PersonalInfo = {
 };
 
 const personal: PersonalInfo = {
-  firstName: "Yute",
-  lastName: "Lilitprapun",
-  career: "Software Engineer",
-  phone: "929-235-5371",
-  email: "yudthsoponvit@gmail.com",
-  location: "NEW YORK, NY",
-  linked: "Linkedin.com/in/yuteoctober",
-  portfolio: "Wins95Portfolio",
-  major: "Bachelor of Information Systems",
-  school: "Ramkhamhaeng University",
-  year: "2011-2015",
+  firstName: "Ismail",
+  lastName: "Hossain",
+  career: "FullStack Engineer",
+  phone: "+88018-4159-7451",
+  email: "ayon000777@email.com",
+  location: "Dhaka, Bangladesh",
+  linked: "linkedin.com/in/ismailgetsitdone/",
+  portfolio: "Portfolio Website",
+  major: "Bachelor of Science in Computer Science and Engineering",
+  school: "North South University",
+  year: "2019-2023",
 };
 
 type TechStack = {
@@ -82,87 +82,128 @@ export default function Resume({ darkMode, setDarkMode }: ResumeProps) {
     { name: "Postman", image: Postman },
   ];
 
-  const sectionOne: SectionDetail = {
-    position: (
-      <>
-        <b>SOFTWARE ENGINEER</b> | <b>FREELANCE</b>
-      </>
-    ),
-    detail: [
-      <>
-        Designed and developed a customizable <b>clothes store platform</b>,
-        enabling clients to personalize images, texts, and colors via an
-        <b> admin login system</b>, using <b>MongoDB</b> and <b>Node.js </b>
-        for the <b>back-end</b>.
-      </>,
-      <>
-        Achieved a <b>25% increase</b> in <b>page visits</b> through <b>SEO optimization</b> strategies, resulting in a <b>21% boost in order volume</b>.
-      </>
-    ]
-  };
+  const sectionOne: SectionDetail[] = [
+    {
+      position: (
+        <>
+          <b>CLICK-O DIGITAL</b> | <b>FULL-STACK DEVELOPER</b> | Jun 2025 - Present
+        </>
+      ),
+      detail: [
+        <>
+          Develop and deploy <b>full-stack web applications</b> for diverse clients using the <b>MERN stack</b> (MongoDB, Express.js, React, Node.js),
+          delivering tailored digital solutions that meet specific business requirements.
+        </>,
+        <>
+          Engineer and maintain secure <b>RESTful APIs</b> to manage data flow between front-end and back-end systems,
+          implementing robust <b>authentication and authorization</b> mechanisms.
+        </>,
+        <>
+          Collaborate with <b>UI/UX designers</b> and <b>project managers</b> to translate client requirements into technical specifications
+          and functional features, ensuring timely project delivery.
+        </>
+      ]
+    },
+    {
+      position: (
+        <>
+          <b>MOXO</b> | <b>PRODUCT DESIGNER</b> | Feb 2025 - May 2025
+        </>
+      ),
+      detail: [
+        <>
+          Designed and prototyped key <b>user-centric features</b> for a high-traffic collaboration platform,
+          directly contributing to the user experience roadmap.
+        </>,
+        <>
+          Created <b>high-fidelity, interactive prototypes</b> in <b>Figma</b>, translating complex product requirements
+          into actionable design specifications that streamlined the development handoff process.
+        </>,
+        <>
+          Collaborated in an <b>agile environment</b> with cross-functional product and engineering teams
+          to ensure design feasibility and a seamless user experience.
+        </>
+      ]
+    },
+    {
+      position: (
+        <>
+          <b>AUGMENTA EDUCATION CONSULTANCY</b> | <b>PYTHON & IELTS INSTRUCTOR</b> | Feb 2024 - Jan 2025
+        </>
+      ),
+      detail: [
+        <>
+          Designed and delivered a comprehensive <b>Python curriculum</b> for over <b>40 students</b>,
+          covering fundamental concepts to advanced data structures.
+        </>,
+        <>
+          Achieved a <b>95% course completion rate</b> through hands-on instruction and personalized guidance.
+        </>
+      ]
+    },
+    {
+      position: (
+        <>
+          <b>EMBEDDED LOGIC OPERATIONS (ELO)</b> | <b>SOFTWARE ENGINEER INTERN</b> | Jan 2022 - Oct 2022
+        </>
+      ),
+      detail: [
+        <>
+          Developed three <b>responsive web interfaces</b> using <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>,
+          contributing to a <b>15% improvement</b> in user task completion rates.
+        </>,
+        <>
+          Contributed to a <b>cross-platform mobile application</b> using <b>Flutter</b>,
+          helping reduce manual data entry time by <b>30%</b>.
+        </>
+      ]
+    }
+  ];
 
   const sectionTwo: SectionDetail[] = [
     {
       position: (
         <>
-          <b>WINDOWS95 | UX/UI | FULLSTACK </b>
+          <b>YELPCAMP | FULLSTACK WEB APPLICATION </b>
         </>
       ),
       detail: [
         <>
-          Developed <b>UX and UI</b> clone of <b>Windows 95</b>,
-          responsive across devices from <b>Mobile</b> to <b>Desktop</b> along with
-          core functionalities using <b>React</b>.
+          Developed a comprehensive <b>camping review platform</b> where users can discover, review, and share camping experiences,
+          built with <b>Node.js</b>, <b>Express</b>, and <b>MongoDB</b>.
         </>,
         <>
-          Implemented key <b>UX functionalities</b> like <b>Drag and Drop</b>, <b>hiding</b>, <b>expanding</b>, and focusing on icons and
-          folders to mimic the classic <b>Windows 95 experience</b>.
+          Implemented <b>user authentication</b> and <b>authorization</b> with <b>Passport.js</b>, enabling secure user registration,
+          login, and session management for campground reviews and submissions.
         </>,
         <>
-          Integrated a fully functional <b>Minesweeper</b> game and a <b>real-time chat application</b>, using <b>MongoDB</b>,
-          <b>Web-socket</b> and <b>Node.js</b> for <b>back-end</b> support, to enhance interactivity.
+          Integrated <b>Cloudinary API</b> for image upload and management, allowing users to upload multiple photos for each campground
+          with automatic image optimization and responsive delivery.
+        </>,
+        <>
+          Built responsive <b>front-end</b> using <b>Bootstrap</b> and <b>EJS templating</b>, ensuring seamless user experience
+          across desktop and mobile devices with interactive maps powered by <b>Mapbox API</b>.
         </>
       ]
     },
     {
       position: (
         <>
-          <b>OPENNFT | E-COMMERCE </b>
+          <b>PORTFOLIO WEBSITE | RESPONSIVE WEB DESIGN</b>
         </>
       ),
       detail: [
         <>
-          Pioneered the creation of an <b>E-Commerce platform</b>, specializing in the sale of <b>NFT digital art</b>,
-          responsive across devices from <b>Mobile</b> to <b>Desktop</b>.
+          Created a modern, responsive <b>portfolio website</b> showcasing professional projects and technical skills,
+          built with <b>HTML5</b>, <b>CSS3</b>, and <b>JavaScript</b>.
         </>,
         <>
-          Integrated <b>Axios</b> to fetch data from <b>API</b> to display on the <b>front-end</b>.
+          Implemented smooth <b>animations</b> and <b>interactive elements</b> to enhance user engagement,
+          featuring project galleries, contact forms, and skill demonstrations.
         </>,
         <>
-          Engineered and optimized <b>sorting algorithms</b> to enhance search and filter functionalities.
-        </>
-      ]
-    },
-    {
-      position: (
-        <>
-          <b>STICKYNOTE | FULLSTACK</b>
-        </>
-      ),
-      detail: [
-        <>
-          Architected database schema and drove the implementation of <b>back-end</b> infrastructure by
-          building out <b>RESTful APIs</b> using <b>Node.js</b> and <b>Express</b>.
-        </>,
-        <>
-          Implemented full-scale <b>CRUD </b>operations to manage data.
-        </>,
-        <>
-          Integrated <b>JWT</b> and <b>bcrypt</b> to authenticate users' login and data.
-        </>,
-        <>
-          Implemented <b>drag-and-drop</b> functionality on the front-end for users to
-          manage their notes using <b>React</b>.
+          Optimized for <b>mobile-first design</b> with cross-browser compatibility and fast loading times,
+          deployed on <b>Webflow</b> for professional presentation.
         </>
       ]
     },
@@ -170,16 +211,19 @@ export default function Resume({ darkMode, setDarkMode }: ResumeProps) {
   
   function handleOpenLink(index: number): void {
     switch (index) {
-      case 0: window.open('https://yuteoctober.github.io/wins95Portfolio/', '_blank'); break;
-      case 1: window.open('https://opennft.netlify.app/', '_blank'); break;
-      case 2: window.open('https://fullstack-stickynotes.netlify.app/', '_blank'); break;
+      case 0: window.open('https://yelpcamp-3bdc.onrender.com/', '_blank'); break;
+      case 1: window.open('https://ismails-portfolio-70b11a.webflow.io/#Portfolio', '_blank'); break;
       default: break;
     }
   }
 
   function handleContact(name: string): void {
-    if (name.includes('Wins95')) {
-      window.open('https://yuteoctober.github.io/wins95Portfolio/');
+    if (name.includes('Portfolio')) {
+      window.open('https://ismails-portfolio-70b11a.webflow.io/#Portfolio');
+      return;
+    }
+    if (name.includes('linkedin.com')) {
+      window.open('https://www.linkedin.com/in/ismailgetsitdone/');
       return;
     }
     return;
@@ -270,14 +314,20 @@ export default function Resume({ darkMode, setDarkMode }: ResumeProps) {
             <div className={`${darkMode ? 'bg-gray-800' : 'bg-[#f8f3f1]'} duration-500 px-4 py-2 mb-4`}>
               <h2 className={`${darkMode ? 'text-white' : 'text-gray-700'} duration-500 font-medium text-xl`}>PROFESSIONAL EXPERIENCE</h2>
             </div>
-            <ul className={`${darkMode ? 'text-white' : 'text-gray-600'} duration-500 list-disc ml-1 text-left text-[14px]`}>
-              {sectionOne.position}
-              {sectionOne.detail.map((text, index) => (
-                <li key={index} className="target ml-4">
-                  {text}
-                </li>
+            <div className="space-y-6">
+              {sectionOne.map((experience, index) => (
+                <ul key={index} className="list-disc ml-1 text-gray-600 text-left text-[14px]">
+                  <li className={`${darkMode ? 'text-white' : 'text-gray-600'} duration-500 list-none font-medium mb-2`}>
+                    {experience.position}
+                  </li>
+                  {experience.detail.map((textLi, liIndex) => (
+                    <li key={liIndex} className={`${darkMode ? 'text-white' : 'text-gray-600'} target duration-500 ml-4 cursor-text`}>
+                      {textLi}
+                    </li>
+                  ))}
+                </ul>
               ))}
-            </ul>
+            </div>
           </section>
 
           <section>
