@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Linkedin, Globe } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, Globe, Github } from "lucide-react";
 import { Dispatch, SetStateAction } from "react";
 
 import React from '../assets/React.png';
@@ -28,6 +28,7 @@ type PersonalInfo = {
   location: string;
   linked: string;
   portfolio: string;
+  github: string;
   major: string;
   school: string;
   year: string;
@@ -42,6 +43,7 @@ const personal: PersonalInfo = {
   location: "Dhaka, Bangladesh",
   linked: "linkedin.com/in/ismailgetsitdone/",
   portfolio: "Portfolio Website",
+  github: "github.com/Ismail-Ai404",
   major: "Bachelor of Science in Computer Science and Engineering",
   school: "North South University",
   year: "2019-2023",
@@ -226,6 +228,10 @@ export default function Resume({ darkMode, setDarkMode }: ResumeProps) {
       window.open('https://www.linkedin.com/in/ismailgetsitdone/');
       return;
     }
+    if (name.includes('github.com')) {
+      window.open('https://github.com/Ismail-Ai404');
+      return;
+    }
     return;
   }
 
@@ -234,6 +240,7 @@ export default function Resume({ darkMode, setDarkMode }: ResumeProps) {
     {icon: Mail, detail: personal.email},
     {icon: MapPin, detail: personal.location},
     {icon: Linkedin, detail: personal.linked},
+    {icon: Github, detail: personal.github},
     {icon: Globe, detail: personal.portfolio},
   ]
 
