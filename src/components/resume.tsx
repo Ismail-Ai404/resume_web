@@ -37,7 +37,7 @@ const personal: PersonalInfo = {
   firstName: "MOHAMMAD ISMAIL",
   lastName: "HOSSAIN SIDDIQUEE",
   career: "Frontend Engineer",
-  email: "mohammad.siddiquee@northsouth.edu",
+  email: "ayon000777@gmail.com",
   location: "Dhaka, Bangladesh",
   github: "github.com/Ismail-Ai404",
   major: "BSc in Computer Science & Engineering",
