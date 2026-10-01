@@ -48,57 +48,32 @@ export default function Resume({
   darkMode,
   setDarkMode,
 }: ResumeProps) {
-  /*
-   * Online icons from Simple Icons via jsDelivr.
-   * This avoids needing local logo files inside src/assets.
-   */
-  const icons = {
-    react:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/react.svg",
-    javascript:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/javascript.svg",
-    html:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/html5.svg",
-    css:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/css3.svg",
-    node:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/nodedotjs.svg",
-    express:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/express.svg",
-    mongodb:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/mongodb.svg",
-    github:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/github.svg",
-    git:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/git.svg",
-    figma:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/figma.svg",
-    photoshop:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/adobephotoshop.svg",
-    python:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/python.svg",
-    next:
-      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/nextdotjs.svg",
-  };
+  
+ const icons = {
+  react: "https://cdn.simpleicons.org/react/61DAFB",
+  javascript: "https://cdn.simpleicons.org/javascript/F7DF1E",
+  html: "https://cdn.simpleicons.org/html5/E34F26",
+  node: "https://cdn.simpleicons.org/nodedotjs/5FA04E",
+  express: "https://cdn.simpleicons.org/express/000000",
+  mongodb: "https://cdn.simpleicons.org/mongodb/47A248",
+  github: "https://cdn.simpleicons.org/github/181717",
+  figma: "https://cdn.simpleicons.org/figma/F24E1E",
+  python: "https://cdn.simpleicons.org/python/3776AB",
+  git: "https://cdn.simpleicons.org/git/F05032",
+};
 
-  const techStack: TechStack[] = [
-    { name: "React", image: icons.react },
-    { name: "JavaScript", image: icons.javascript },
-    { name: "HTML", image: icons.html },
-    { name: "CSS", image: icons.css },
-    { name: "Node.js", image: icons.node },
-    { name: "Express.js", image: icons.express },
-    { name: "MongoDB", image: icons.mongodb },
-    { name: "GitHub", image: icons.github },
-    { name: "REST" },
-    { name: "Figma", image: icons.figma },
-    { name: "Adobe Photoshop", image: icons.photoshop },
-    { name: "Python", image: icons.python },
-    { name: "Git", image: icons.git },
-    { name: "UI/UX" },
-    { name: "AI" },
-    { name: "Next.js", image: icons.next },
-  ];
+const techStack: TechStack[] = [
+  { name: "React", image: icons.react },
+  { name: "JavaScript", image: icons.javascript },
+  { name: "HTML", image: icons.html },
+  { name: "Node.js", image: icons.node },
+  { name: "Express.js", image: icons.express },
+  { name: "MongoDB", image: icons.mongodb },
+  { name: "GitHub", image: icons.github },
+  { name: "Figma", image: icons.figma },
+  { name: "Python", image: icons.python },
+  { name: "Git", image: icons.git },
+];
 
   const experiences: SectionDetail[] = [
     {
