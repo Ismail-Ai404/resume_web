@@ -1,21 +1,11 @@
 import {
   Mail,
-  MapPin,
-  Linkedin,
   Github,
+  MapPin,
 } from "lucide-react";
 
 import { Dispatch, SetStateAction } from "react";
 import { IoSunny, IoMoon } from "react-icons/io5";
-
-import ReactLogo from "../assets/React.png";
-import CSS3 from "../assets/CSS3.png";
-import Express from "../assets/Express.png";
-import GitHub from "../assets/GitHub.png";
-import HTML5 from "../assets/HTML5.png";
-import JavaScript from "../assets/JavaScript.png";
-import MongoDB from "../assets/MongoDB.png";
-import Node from "../assets/Node.png";
 
 type PersonalInfo = {
   firstName: string;
@@ -23,7 +13,6 @@ type PersonalInfo = {
   career: string;
   email: string;
   location: string;
-  linked: string;
   github: string;
   major: string;
   school: string;
@@ -50,7 +39,6 @@ const personal: PersonalInfo = {
   career: "Frontend Engineer",
   email: "mohammad.siddiquee@northsouth.edu",
   location: "Dhaka, Bangladesh",
-  linked: "linkedin.com/in/ismailgetsitdone/",
   github: "github.com/Ismail-Ai404",
   major: "BSc in Computer Science & Engineering",
   school: "North South University",
@@ -60,25 +48,56 @@ export default function Resume({
   darkMode,
   setDarkMode,
 }: ResumeProps) {
-  const techStack: TechStack[] = [
-    { name: "React", image: ReactLogo },
-    { name: "JavaScript", image: JavaScript },
-    { name: "HTML", image: HTML5 },
-    { name: "CSS", image: CSS3 },
-    { name: "Node.js", image: Node },
-    { name: "Express.js", image: Express },
-    { name: "MongoDB", image: MongoDB },
-    { name: "GitHub", image: GitHub },
+  /*
+   * Online icons from Simple Icons via jsDelivr.
+   * This avoids needing local logo files inside src/assets.
+   */
+  const icons = {
+    react:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/react.svg",
+    javascript:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/javascript.svg",
+    html:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/html5.svg",
+    css:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/css3.svg",
+    node:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/nodedotjs.svg",
+    express:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/express.svg",
+    mongodb:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/mongodb.svg",
+    github:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/github.svg",
+    git:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/git.svg",
+    figma:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/figma.svg",
+    photoshop:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/adobephotoshop.svg",
+    python:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/python.svg",
+    next:
+      "https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/nextdotjs.svg",
+  };
 
-    // No image assets required for these skills
+  const techStack: TechStack[] = [
+    { name: "React", image: icons.react },
+    { name: "JavaScript", image: icons.javascript },
+    { name: "HTML", image: icons.html },
+    { name: "CSS", image: icons.css },
+    { name: "Node.js", image: icons.node },
+    { name: "Express.js", image: icons.express },
+    { name: "MongoDB", image: icons.mongodb },
+    { name: "GitHub", image: icons.github },
     { name: "REST" },
-    { name: "Figma" },
-    { name: "Adobe Photoshop" },
-    { name: "Python" },
-    { name: "Git" },
+    { name: "Figma", image: icons.figma },
+    { name: "Adobe Photoshop", image: icons.photoshop },
+    { name: "Python", image: icons.python },
+    { name: "Git", image: icons.git },
     { name: "UI/UX" },
     { name: "AI" },
-    { name: "Next.js" },
+    { name: "Next.js", image: icons.next },
   ];
 
   const experiences: SectionDetail[] = [
@@ -91,19 +110,19 @@ export default function Resume({
       detail: [
         <>
           Develop and maintain <b>web applications</b> and user-facing
-          software features.
+          software features
         </>,
         <>
           Contribute to <b>frontend implementation</b>, feature development,
-          debugging, and application refinement.
+          debugging, and application refinement
         </>,
         <>
           Work across application layers to integrate frontend functionality
-          with <b>backend services</b>.
+          with <b>backend services</b>
         </>,
         <>
           Collaborate within software development workflows to deliver and
-          improve <b>production features</b>.
+          improve <b>production features</b>
         </>,
       ],
     },
@@ -116,22 +135,22 @@ export default function Resume({
       ),
       detail: [
         <>
-          Developed <b>responsive frontend interfaces</b> for web projects.
+          Developed <b>responsive frontend interfaces</b> for web projects
         </>,
         <>
           Translated design concepts into clean, functional, and
-          <b> user-friendly web experiences</b>.
+          <b> user-friendly web experiences</b>
         </>,
         <>
-          Built and refined interfaces using <b>HTML, CSS, JavaScript, and React</b>.
+          Built and refined interfaces using <b>HTML, CSS, JavaScript, and React</b>
         </>,
         <>
-          Improved layouts and interactions across different screen sizes
-          and devices.
+          Improved layouts and interactions across different screen sizes and
+          devices
         </>,
         <>
           Worked with design and development requirements to turn concepts
-          into working interfaces.
+          into working interfaces
         </>,
       ],
     },
@@ -146,23 +165,23 @@ export default function Resume({
         <>
           Developed a <b>student-performance web application</b> using Node
           and MongoDB, contributing to backend development, frontend
-          integration, and deployment.
+          integration, and deployment
         </>,
         <>
           Built and supported <b>data-driven interfaces and workflows</b> for
-          student records, attendance, payments, and reporting.
+          student records, attendance, payments, and reporting
         </>,
         <>
           Structured operational data and digital workflows for
-          <b> education-related processes</b>.
+          <b> education-related processes</b>
         </>,
         <>
           Optimized database operations, reducing execution time by
-          approximately <b>60%</b>.
+          approximately <b>60%</b>
         </>,
         <>
           Worked across frontend, backend, and database layers to deliver and
-          maintain application functionality.
+          maintain application functionality
         </>,
       ],
     },
@@ -170,24 +189,25 @@ export default function Resume({
     {
       position: (
         <>
-          <b>AUGMENTA EDUCATION</b> | <b>LEAD INSTRUCTOR OF PYTHON</b> | 11/2024 - 01/2025
+          <b>AUGMENTA EDUCATION</b> | <b>LEAD INSTRUCTOR OF PYTHON</b> | 11/2024 -
+          01/2025
         </>
       ),
       detail: [
         <>
           Taught <b>Python</b> through structured lessons, practical
-          exercises, and programming projects.
+          exercises, and programming projects
         </>,
         <>
           Developed tutorials and learning materials focused on
-          <b> programming fundamentals and problem-solving</b>.
+          <b> programming fundamentals and problem-solving</b>
         </>,
         <>
           Guided learners through hands-on programming tasks and technical
-          concepts.
+          concepts
         </>,
         <>
-          Provided technical training and support to students and staff.
+          Provided technical training and support to students and staff
         </>,
       ],
     },
@@ -201,27 +221,27 @@ export default function Resume({
       detail: [
         <>
           Contributed to the development of <b>SaaS products</b>, working
-          across UI/UX design and frontend implementation.
+          across UI/UX design and frontend implementation
         </>,
         <>
           Designed user interfaces and improved user experiences, translating
-          product requirements into intuitive, user-friendly designs.
+          product requirements into intuitive, user-friendly designs
         </>,
         <>
           Transitioned into a <b>frontend-focused role</b>, building and
-          maintaining responsive web interfaces for multiple client projects.
+          maintaining responsive web interfaces for multiple client projects
         </>,
         <>
           Collaborated with cross-functional teams to implement features,
-          resolve bugs, and improve application performance.
+          resolve bugs, and improve application performance
         </>,
         <>
           Worked across diverse client requirements, adapting designs and
-          frontend solutions to different products and business needs.
+          frontend solutions to different products and business needs
         </>,
         <>
           Assisted with development tasks, debugging, and application
-          improvements.
+          improvements
         </>,
       ],
     },
@@ -237,24 +257,12 @@ export default function Resume({
       detail: personal.location,
     },
     {
-      icon: Linkedin,
-      detail: personal.linked,
-    },
-    {
       icon: Github,
       detail: personal.github,
     },
   ];
 
   function handleContact(name: string): void {
-    if (name.includes("linkedin.com")) {
-      window.open(
-        "https://www.linkedin.com/in/ismailgetsitdone/",
-        "_blank"
-      );
-      return;
-    }
-
     if (name.includes("github.com")) {
       window.open(
         "https://github.com/Ismail-Ai404",
@@ -274,12 +282,12 @@ export default function Resume({
         className="target absolute right-5 top-4 z-20 cursor-pointer"
         onClick={() => setDarkMode(!darkMode)}
       >
-        <p className="text-[30px] duration-500 transition-opacity opacity-100 text-white">
+        <p className="text-[30px] text-white">
           {darkMode ? <IoSunny /> : <IoMoon />}
         </p>
       </div>
 
-      {/* Header */}
+      {/* HEADER */}
       <header
         className={`${
           darkMode ? "bg-gray-800" : "bg-gray-700"
@@ -310,7 +318,9 @@ export default function Resume({
         {/* LEFT COLUMN */}
         <aside
           className={`${
-            darkMode ? "bg-[#151414]" : "bg-[#f8f3f1]"
+            darkMode
+              ? "bg-[#151414]"
+              : "bg-[#f8f3f1]"
           } duration-500 w-full md:w-[300px] p-6`}
         >
           {/* CONTACT */}
@@ -323,24 +333,23 @@ export default function Resume({
               CONTACT
             </h2>
 
-            <div className="space-y-3">
+            <div className="space-y-4">
               {contact.map((item, index) => {
-                const clickable =
-                  item.detail.includes("linkedin.com") ||
+                const isClickable =
                   item.detail.includes("github.com");
 
                 return (
                   <div
                     key={index}
                     onClick={() =>
-                      clickable && handleContact(item.detail)
+                      isClickable && handleContact(item.detail)
                     }
                     className={`${
                       darkMode
                         ? "text-white hover:text-blue-400"
                         : "text-gray-600 hover:text-blue-600"
-                    } flex w-full items-start gap-3 duration-500 ${
-                      clickable ? "cursor-pointer" : ""
+                    } flex items-start gap-3 duration-500 ${
+                      isClickable ? "cursor-pointer" : ""
                     }`}
                   >
                     <item.icon className="w-5 h-5 mt-0.5 shrink-0" />
@@ -412,16 +421,26 @@ export default function Resume({
                   ) : (
                     <div
                       className={`${
-                        darkMode ? "text-white" : "text-gray-700"
+                        darkMode
+                          ? "text-white"
+                          : "text-gray-700"
                       } w-[30px] h-[30px] flex items-center justify-center font-bold text-[11px] text-center`}
                     >
-                      {skill.name.slice(0, 2).toUpperCase()}
+                      {skill.name === "Adobe Photoshop"
+                        ? "Ps"
+                        : skill.name === "JavaScript"
+                        ? "JS"
+                        : skill.name === "Next.js"
+                        ? "N"
+                        : skill.name.slice(0, 2).toUpperCase()}
                     </div>
                   )}
 
                   <p
                     className={`${
-                      darkMode ? "text-white" : "text-gray-900"
+                      darkMode
+                        ? "text-white"
+                        : "text-gray-900"
                     } text-[10px] text-center mt-2 leading-tight`}
                   >
                     {skill.name}
@@ -471,12 +490,16 @@ export default function Resume({
           <section className="mb-8">
             <div
               className={`${
-                darkMode ? "bg-gray-800" : "bg-[#f8f3f1]"
+                darkMode
+                  ? "bg-gray-800"
+                  : "bg-[#f8f3f1]"
               } px-4 py-2 mb-4`}
             >
               <h2
                 className={`${
-                  darkMode ? "text-white" : "text-gray-700"
+                  darkMode
+                    ? "text-white"
+                    : "text-gray-700"
                 } font-medium text-xl`}
               >
                 SUMMARY
@@ -485,13 +508,16 @@ export default function Resume({
 
             <p
               className={`${
-                darkMode ? "text-white" : "text-gray-600"
+                darkMode
+                  ? "text-white"
+                  : "text-gray-600"
               } text-[14px] leading-6`}
             >
-              Frontend Engineer with a background in Computer Science and
-              experience building responsive web applications. Skilled in
-              React, JavaScript, and modern web technologies, with a focus on
-              creating practical, user-friendly digital experiences.
+              Frontend Engineer with a background in Computer Science
+              and experience building responsive web applications.
+              Skilled in React, JavaScript, and modern web technologies,
+              with a focus on creating practical, user-friendly digital
+              experiences.
             </p>
           </section>
 
@@ -499,12 +525,16 @@ export default function Resume({
           <section>
             <div
               className={`${
-                darkMode ? "bg-gray-800" : "bg-[#f8f3f1]"
+                darkMode
+                  ? "bg-gray-800"
+                  : "bg-[#f8f3f1]"
               } px-4 py-2 mb-6`}
             >
               <h2
                 className={`${
-                  darkMode ? "text-white" : "text-gray-700"
+                  darkMode
+                    ? "text-white"
+                    : "text-gray-700"
                 } font-medium text-xl`}
               >
                 PROFESSIONAL EXPERIENCE
@@ -514,28 +544,34 @@ export default function Resume({
             <div className="space-y-7">
               {experiences.map((experience, index) => (
                 <div key={index}>
+                  {/* Job title */}
                   <div
                     className={`${
-                      darkMode ? "text-white" : "text-gray-700"
+                      darkMode
+                        ? "text-white"
+                        : "text-gray-700"
                     } text-[14px] font-medium mb-2 leading-5`}
                   >
                     {experience.position}
                   </div>
 
-                  <ul
-                    className={`${
-                      darkMode ? "text-white" : "text-gray-600"
-                    } text-[14px]`}
-                  >
-                    {experience.detail.map((detail, detailIndex) => (
-                      <li
-                        key={detailIndex}
-                        className="ml-5 list-disc leading-6"
-                      >
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* No bullet points */}
+                  <div className="space-y-2">
+                    {experience.detail.map(
+                      (detail, detailIndex) => (
+                        <p
+                          key={detailIndex}
+                          className={`${
+                            darkMode
+                              ? "text-white"
+                              : "text-gray-600"
+                          } text-[14px] leading-6`}
+                        >
+                          {detail}
+                        </p>
+                      )
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
