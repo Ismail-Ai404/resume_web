@@ -3,25 +3,19 @@ import {
   MapPin,
   Linkedin,
   Github,
-  Globe,
 } from "lucide-react";
 
-import React from "../assets/React.png";
+import { Dispatch, SetStateAction } from "react";
+import { IoSunny, IoMoon } from "react-icons/io5";
+
+import ReactLogo from "../assets/React.png";
+import CSS3 from "../assets/CSS3.png";
+import Express from "../assets/Express.png";
 import GitHub from "../assets/GitHub.png";
 import HTML5 from "../assets/HTML5.png";
 import JavaScript from "../assets/JavaScript.png";
 import MongoDB from "../assets/MongoDB.png";
 import Node from "../assets/Node.png";
-import Express from "../assets/Express.png";
-import Figma from "../assets/Figma.png";
-import Python from "../assets/Python.png";
-import CSS from "../assets/CSS3.png";
-import Next from "../assets/Next.png";
-
-import { IoSunny } from "react-icons/io5";
-import { IoMoon } from "react-icons/io5";
-
-import { Dispatch, SetStateAction } from "react";
 
 type PersonalInfo = {
   firstName: string;
@@ -31,10 +25,8 @@ type PersonalInfo = {
   location: string;
   linked: string;
   github: string;
-  portfolio: string;
   major: string;
   school: string;
-  year: string;
 };
 
 type TechStack = {
@@ -60,10 +52,8 @@ const personal: PersonalInfo = {
   location: "Dhaka, Bangladesh",
   linked: "linkedin.com/in/ismailgetsitdone/",
   github: "github.com/Ismail-Ai404",
-  portfolio: "Portfolio Website",
   major: "BSc in Computer Science & Engineering",
   school: "North South University",
-  year: "2019 - 2023",
 };
 
 export default function Resume({
@@ -71,29 +61,31 @@ export default function Resume({
   setDarkMode,
 }: ResumeProps) {
   const techStack: TechStack[] = [
-    { name: "React", image: React },
+    { name: "React", image: ReactLogo },
     { name: "JavaScript", image: JavaScript },
     { name: "HTML", image: HTML5 },
-    { name: "CSS", image: CSS },
+    { name: "CSS", image: CSS3 },
     { name: "Node.js", image: Node },
     { name: "Express.js", image: Express },
     { name: "MongoDB", image: MongoDB },
-    { name: "Python", image: Python },
-    { name: "Figma", image: Figma },
     { name: "GitHub", image: GitHub },
-    { name: "Git" },
+
+    // No image assets required for these skills
     { name: "REST" },
-    { name: "UI/UX" },
+    { name: "Figma" },
     { name: "Adobe Photoshop" },
+    { name: "Python" },
+    { name: "Git" },
+    { name: "UI/UX" },
     { name: "AI" },
-    { name: "Next.js", image: Next },
+    { name: "Next.js" },
   ];
 
-  const sectionOne: SectionDetail[] = [
+  const experiences: SectionDetail[] = [
     {
       position: (
         <>
-          <b>ELO</b> | <b>FRONTEND ENGINEER</b> | Jun 2025 - Present
+          <b>ELO</b> | <b>FRONTEND ENGINEER</b> | 06/2025 - Present
         </>
       ),
       detail: [
@@ -119,8 +111,7 @@ export default function Resume({
     {
       position: (
         <>
-          <b>ARB INTERACTIVE</b> | <b>FRONTEND DEVELOPER</b> | Feb 2025 - May
-          2025
+          <b>ARB INTERACTIVE</b> | <b>FRONTEND DEVELOPER</b> | 02/2025 - 05/2025
         </>
       ),
       detail: [
@@ -132,12 +123,11 @@ export default function Resume({
           <b> user-friendly web experiences</b>.
         </>,
         <>
-          Built and refined interfaces using <b>HTML, CSS, JavaScript, and
-          React</b>.
+          Built and refined interfaces using <b>HTML, CSS, JavaScript, and React</b>.
         </>,
         <>
-          Improved layouts and interactions across different screen sizes and
-          devices.
+          Improved layouts and interactions across different screen sizes
+          and devices.
         </>,
         <>
           Worked with design and development requirements to turn concepts
@@ -149,8 +139,7 @@ export default function Resume({
     {
       position: (
         <>
-          <b>AUGMENTA EDUCATION</b> | <b>SOFTWARE CONSULTANT</b> | Nov 2024 -
-          Jan 2025
+          <b>AUGMENTA EDUCATION</b> | <b>SOFTWARE CONSULTANT</b> | 11/2024 - 01/2025
         </>
       ),
       detail: [
@@ -181,14 +170,13 @@ export default function Resume({
     {
       position: (
         <>
-          <b>AUGMENTA EDUCATION</b> | <b>LEAD INSTRUCTOR OF PYTHON</b> | Nov
-          2024 - Jan 2025
+          <b>AUGMENTA EDUCATION</b> | <b>LEAD INSTRUCTOR OF PYTHON</b> | 11/2024 - 01/2025
         </>
       ),
       detail: [
         <>
-          Taught <b>Python</b> through structured lessons, practical exercises,
-          and programming projects.
+          Taught <b>Python</b> through structured lessons, practical
+          exercises, and programming projects.
         </>,
         <>
           Developed tutorials and learning materials focused on
@@ -207,7 +195,7 @@ export default function Resume({
     {
       position: (
         <>
-          <b>ELO</b> | <b>FRONTEND ENGINEER</b> | Jan 2022 - Oct 2024
+          <b>ELO</b> | <b>FRONTEND ENGINEER</b> | 01/2022 - 10/2024
         </>
       ),
       detail: [
@@ -256,10 +244,6 @@ export default function Resume({
       icon: Github,
       detail: personal.github,
     },
-    {
-      icon: Globe,
-      detail: personal.portfolio,
-    },
   ];
 
   function handleContact(name: string): void {
@@ -276,14 +260,6 @@ export default function Resume({
         "https://github.com/Ismail-Ai404",
         "_blank"
       );
-      return;
-    }
-
-    if (name.includes("Portfolio")) {
-      window.open(
-        "https://ismail-ai404.github.io/resume_web/",
-        "_blank"
-      );
     }
   }
 
@@ -291,7 +267,7 @@ export default function Resume({
     <div
       className={`${
         darkMode ? "bg-black" : "bg-white"
-      } md:min-w-[800px] lg:w-[900px] w-[100svw] overflow-x-hidden absolute top-0 left-1/2 -translate-x-1/2`}
+      } md:min-w-[800px] lg:w-[900px] md:max-w-[900px] w-[100svw] overflow-x-hidden absolute top-0 left-1/2 -translate-x-1/2`}
     >
       {/* Dark Mode Toggle */}
       <div
@@ -299,11 +275,7 @@ export default function Resume({
         onClick={() => setDarkMode(!darkMode)}
       >
         <p className="text-[30px] duration-500 transition-opacity opacity-100 text-white">
-          {darkMode ? (
-            <IoSunny className="sun" />
-          ) : (
-            <IoMoon className="moon" />
-          )}
+          {darkMode ? <IoSunny /> : <IoMoon />}
         </p>
       </div>
 
@@ -311,10 +283,10 @@ export default function Resume({
       <header
         className={`${
           darkMode ? "bg-gray-800" : "bg-gray-700"
-        } duration-500 p-8 flex flex-col items-start gap-6 text-white`}
+        } duration-500 p-8 flex flex-col items-start gap-4 text-white`}
       >
         <div className="relative flex flex-col items-start">
-          <h1 className="font-light mb-2 flex gap-4 flex-wrap">
+          <h1 className="font-light mb-2 flex flex-wrap gap-x-4 gap-y-1">
             <span className="target md:text-[42px] text-[32px] relative duration-500 cursor-default">
               {personal.firstName}
             </span>
@@ -324,7 +296,7 @@ export default function Resume({
             </span>
           </h1>
 
-          <p className="text-[18px] pl-2 transform cursor-default">
+          <p className="text-[18px] pl-1 cursor-default">
             {personal.career}
           </p>
         </div>
@@ -336,11 +308,9 @@ export default function Resume({
         } flex flex-col md:flex-row`}
       >
         {/* LEFT COLUMN */}
-        <div
+        <aside
           className={`${
-            darkMode
-              ? "bg-[#151414]"
-              : "bg-[#f8f3f1]"
+            darkMode ? "bg-[#151414]" : "bg-[#f8f3f1]"
           } duration-500 w-full md:w-[300px] p-6`}
         >
           {/* CONTACT */}
@@ -348,29 +318,39 @@ export default function Resume({
             <h2
               className={`${
                 darkMode ? "text-white" : "text-gray-700"
-              } duration-500 font-medium text-xl mb-4`}
+              } font-medium text-xl mb-4`}
             >
               CONTACT
             </h2>
 
-            <div className="space-y-3 relative md:left-2 flex flex-col items-center">
-              {contact.map((item, index) => (
-                <div
-                  key={index}
-                  className={`${
-                    darkMode
-                      ? "text-white hover:text-blue-400"
-                      : "text-gray-600 hover:text-blue-600"
-                  } flex w-[250px] items-center gap-3 duration-500 cursor-pointer`}
-                  onClick={() => handleContact(item.detail)}
-                >
-                  <item.icon className="w-5 h-5 shrink-0" />
+            <div className="space-y-3">
+              {contact.map((item, index) => {
+                const clickable =
+                  item.detail.includes("linkedin.com") ||
+                  item.detail.includes("github.com");
 
-                  <span className="text-[13px] break-all">
-                    {item.detail}
-                  </span>
-                </div>
-              ))}
+                return (
+                  <div
+                    key={index}
+                    onClick={() =>
+                      clickable && handleContact(item.detail)
+                    }
+                    className={`${
+                      darkMode
+                        ? "text-white hover:text-blue-400"
+                        : "text-gray-600 hover:text-blue-600"
+                    } flex w-full items-start gap-3 duration-500 ${
+                      clickable ? "cursor-pointer" : ""
+                    }`}
+                  >
+                    <item.icon className="w-5 h-5 mt-0.5 shrink-0" />
+
+                    <span className="text-[13px] break-all leading-5">
+                      {item.detail}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </section>
 
@@ -379,80 +359,41 @@ export default function Resume({
             <h2
               className={`${
                 darkMode ? "text-white" : "text-gray-700"
-              } duration-500 font-medium text-xl mb-4`}
+              } font-medium text-xl mb-4`}
             >
               EDUCATION
-            </h2>
-
-            <div className="space-y-4">
-              <div>
-                <p
-                  className={`${
-                    darkMode ? "text-white" : "text-gray-600"
-                  } duration-500`}
-                >
-                  {personal.major}
-                </p>
-
-                <p
-                  className={`${
-                    darkMode ? "text-white" : "text-gray-600"
-                  } duration-500`}
-                >
-                  {personal.school}
-                </p>
-
-                <p
-                  className={`${
-                    darkMode ? "text-white" : "text-gray-600"
-                  } duration-500`}
-                >
-                  {personal.year}
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* LANGUAGES */}
-          <section className="mb-8">
-            <h2
-              className={`${
-                darkMode ? "text-white" : "text-gray-700"
-              } duration-500 font-medium text-xl mb-4`}
-            >
-              LANGUAGES
             </h2>
 
             <div className="space-y-2">
               <p
                 className={`${
                   darkMode ? "text-white" : "text-gray-600"
-                } duration-500 text-[15px]`}
+                } text-[15px] leading-6`}
               >
-                <b>English</b> — Bilingual
+                {personal.major}
               </p>
 
               <p
                 className={`${
                   darkMode ? "text-white" : "text-gray-600"
-                } duration-500 text-[15px]`}
+                } text-[15px]`}
               >
-                <b>Bengali</b> — Native
+                {personal.school}
               </p>
             </div>
           </section>
 
-          {/* TECH STACK */}
-          <section>
+          {/* SKILLS */}
+          <section className="mb-8">
             <h2
               className={`${
                 darkMode ? "text-white" : "text-gray-700"
-              } duration-500 font-medium text-xl mb-4`}
+              } font-medium text-xl mb-4`}
             >
               SKILLS
             </h2>
 
-            <div className="p-2 grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-3">
               {techStack.map((skill, index) => (
                 <div
                   key={index}
@@ -472,7 +413,7 @@ export default function Resume({
                     <div
                       className={`${
                         darkMode ? "text-white" : "text-gray-700"
-                      } w-[30px] h-[30px] flex items-center justify-center font-bold text-[12px]`}
+                      } w-[30px] h-[30px] flex items-center justify-center font-bold text-[11px] text-center`}
                     >
                       {skill.name.slice(0, 2).toUpperCase()}
                     </div>
@@ -481,7 +422,7 @@ export default function Resume({
                   <p
                     className={`${
                       darkMode ? "text-white" : "text-gray-900"
-                    } text-[11px] text-center cursor-default relative top-2`}
+                    } text-[10px] text-center mt-2 leading-tight`}
                   >
                     {skill.name}
                   </p>
@@ -489,25 +430,54 @@ export default function Resume({
               ))}
             </div>
           </section>
-        </div>
+
+          {/* LANGUAGES */}
+          <section>
+            <h2
+              className={`${
+                darkMode ? "text-white" : "text-gray-700"
+              } font-medium text-xl mb-4`}
+            >
+              LANGUAGES
+            </h2>
+
+            <div className="space-y-2">
+              <p
+                className={`${
+                  darkMode ? "text-white" : "text-gray-600"
+                } text-[15px]`}
+              >
+                <b>English</b> — Bilingual
+              </p>
+
+              <p
+                className={`${
+                  darkMode ? "text-white" : "text-gray-600"
+                } text-[15px]`}
+              >
+                <b>Bengali</b> — Native
+              </p>
+            </div>
+          </section>
+        </aside>
 
         {/* RIGHT COLUMN */}
-        <div
+        <main
           className={`${
             darkMode ? "bg-[#1a1919fa]" : "bg-white"
-          } w-full md:w-[100%] p-8`}
+          } w-full p-8`}
         >
           {/* SUMMARY */}
           <section className="mb-8">
             <div
               className={`${
                 darkMode ? "bg-gray-800" : "bg-[#f8f3f1]"
-              } duration-500 px-4 py-2 mb-4`}
+              } px-4 py-2 mb-4`}
             >
               <h2
                 className={`${
                   darkMode ? "text-white" : "text-gray-700"
-                } duration-500 font-medium text-xl`}
+                } font-medium text-xl`}
               >
                 SUMMARY
               </h2>
@@ -516,7 +486,7 @@ export default function Resume({
             <p
               className={`${
                 darkMode ? "text-white" : "text-gray-600"
-              } duration-500 text-[14px] leading-6`}
+              } text-[14px] leading-6`}
             >
               Frontend Engineer with a background in Computer Science and
               experience building responsive web applications. Skilled in
@@ -530,42 +500,47 @@ export default function Resume({
             <div
               className={`${
                 darkMode ? "bg-gray-800" : "bg-[#f8f3f1]"
-              } duration-500 px-4 py-2 mb-6`}
+              } px-4 py-2 mb-6`}
             >
               <h2
                 className={`${
                   darkMode ? "text-white" : "text-gray-700"
-                } duration-500 font-medium text-xl`}
+                } font-medium text-xl`}
               >
                 PROFESSIONAL EXPERIENCE
               </h2>
             </div>
 
             <div className="space-y-7">
-              {sectionOne.map((experience, index) => (
-                <ul
-                  key={index}
-                  className={`${
-                    darkMode ? "text-white" : "text-gray-600"
-                  } text-left text-[14px]`}
-                >
-                  <li className="list-none font-medium mb-2">
+              {experiences.map((experience, index) => (
+                <div key={index}>
+                  <div
+                    className={`${
+                      darkMode ? "text-white" : "text-gray-700"
+                    } text-[14px] font-medium mb-2 leading-5`}
+                  >
                     {experience.position}
-                  </li>
+                  </div>
 
-                  {experience.detail.map((textLi, liIndex) => (
-                    <li
-                      key={liIndex}
-                      className="ml-5 list-disc leading-6"
-                    >
-                      {textLi}
-                    </li>
-                  ))}
-                </ul>
+                  <ul
+                    className={`${
+                      darkMode ? "text-white" : "text-gray-600"
+                    } text-[14px]`}
+                  >
+                    {experience.detail.map((detail, detailIndex) => (
+                      <li
+                        key={detailIndex}
+                        className="ml-5 list-disc leading-6"
+                      >
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
           </section>
-        </div>
+        </main>
       </div>
     </div>
   );
